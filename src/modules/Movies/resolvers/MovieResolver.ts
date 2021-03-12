@@ -1,22 +1,7 @@
-import { Movie } from "../entity/Movie";
-import { Arg, Field, InputType, Int, Mutation, Query, Resolver } from "type-graphql";
+import { Movie } from "../../../entity/Movie";
+import { Arg, Mutation, Query, Resolver } from "type-graphql";
+import { MovieInput, MovieUpdateInput } from "../models/Movie";
 
-@InputType()
-class MovieInput {
-    @Field()
-    title: string
-
-    @Field(() => Int)
-    minutes: number
-}
-@InputType()
-class MovieUpdateInput {
-    @Field(() => String, { nullable: true })
-    title?: string
-
-    @Field(() => Int, { nullable: true })
-    minutes?: number
-}
 
 @Resolver()
 export class MovieResolver {
