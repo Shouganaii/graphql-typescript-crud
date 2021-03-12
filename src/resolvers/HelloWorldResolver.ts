@@ -5,7 +5,7 @@ import { Ctx, Query, Resolver, UseMiddleware } from "type-graphql";
 @Resolver()
 export class HelloWorldResolver {
   @Query(() => String)
-  @UseMiddleware(isAuth)
+  //@UseMiddleware(isAuth)
   hello() {
     return "hi!";
   }
